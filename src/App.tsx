@@ -1,22 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   Terminal,
-  User,
   Github,
   Linkedin,
-  Mail,
-  FileText,
   Instagram,
   MessageSquare,
+  Wifi,
 } from "lucide-react";
 import { CommandInput } from "./components/CommandInput";
 import { CommandOutput } from "./components/CommandOutput";
+import { useIpAddress } from './hooks/UseIpAddress';
 
 function App() {
   const [history, setHistory] = useState<
     Array<{ command: string; output: JSX.Element | string }>
   >([]);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const ipAddress = useIpAddress();
 
   const commands = {
     ls: (
@@ -31,8 +31,8 @@ function App() {
     "cat about.txt": (
       <div className="space-y-2">
         <p>
-          Hey there! 👋 I'm Shubham aka Iqlip, a passionate cybersecurity enthusiast with a
-          focus on offensive security, red teaming, and OSINT.
+          Hey there! 👋 I'm Shubham aka Iqlip, a passionate cybersecurity
+          enthusiast with a focus on offensive security, red teaming, and OSINT.
         </p>
         <p>
           I'm good at OSINT, creating security tools, and exploring penetration
@@ -224,6 +224,13 @@ function App() {
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <div className="flex-1 text-center text-sm text-gray-300">
+            Terminal
+          </div>
+          <div className="flex items-center space-x-2 text-gray-300 text-sm">
+            <Wifi className="w-4 h-4" />
+            <span>{ipAddress}</span>
           </div>
         </div>
 
