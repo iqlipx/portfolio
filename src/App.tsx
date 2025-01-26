@@ -160,7 +160,7 @@ function App() {
         </div>
       </div>
     ),
-    whoami: "Iqlip",
+    whoami: "www-data",
     help: (
       <div className="space-y-2">
         <p>Available commands:</p>
