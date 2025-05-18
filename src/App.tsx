@@ -115,7 +115,7 @@ function App() {
           </h3>
         </div>
         <a
-          href="https://discord.gg/qc43TxvWHC"
+          href="#"
           className="text-blue-400 hover:underline block"
         >
           Click here to join: discord.gg/CrimsonCommandCenter
